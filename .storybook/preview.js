@@ -2,15 +2,11 @@ import React from 'react'
 import { addParameters, addDecorator } from '@storybook/react'
 import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport'
 
-// import GlobalStyle from '../src/styles/global';
+import GlobalStyle from '../src/styles/global';
 
 import CustomViewports from './customViewports'
 
-// addDecorator(storyFn => (
-//   <GlobalStyle>
-//     {storyFn()}
-//   </GlobalStyle>
-// ));
+addDecorator(storyFn => <><GlobalStyle />{storyFn()}</>);
 
 addParameters({
   viewport: {

@@ -11,7 +11,7 @@ import {knobButtonLoading, knobButtonSizes} from './knobs'
 
 import Button from ".";
 
-<Meta title="Components|Buttons" component={Button} />
+<Meta title="Components/Buttons" component={Button} />
 
 
 # Botão
@@ -388,14 +388,7 @@ Buttons allow users to make some actions. You can add a `href` attr to use it as
       </Button>
       <Button isLoading={knobButtonLoading()} endIcon="→" variant="outlined">
         With icon
-      </Button>
-      <Button
-        isLoading={knobButtonLoading()}
-        startIcon={<span>←</span>}
-        size="small"
-      >
-        With icon and tag
-      </Button>
+      </Button>      
     </div>
   </Story>
 </Preview>
@@ -408,7 +401,7 @@ Buttons allow users to make some actions. You can add a `href` attr to use it as
       <Button isLoading={true} color="primary">
         Loading example
       </Button>
-      <Button isLoading={true} color="secondary" size="small">
+      <Button isLoading={true} color="secondary" size="large">
         Loading example
       </Button>
     </div>
