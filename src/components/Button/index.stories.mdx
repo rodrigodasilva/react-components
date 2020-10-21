@@ -13,10 +13,9 @@ import Button from ".";
 
 <Meta title="Components/Buttons" component={Button} />
 
+# Button
 
-# Botão
-
-Buttons allow users to make some actions. You can add a `href` attr to use it as `<a>` element.
+O Button pode ser utlizado para realizar ações. Podendo adicionar a propriedade `href` para usá-lo como uma tag `<a>`
 
 ## Variants
 
@@ -93,6 +92,111 @@ Buttons allow users to make some actions. You can add a `href` attr to use it as
 </Preview>
 
 ## Shapes
+
+### Round Square
+
+<Preview>
+  <Story name="Round-square" decorators={[withKnobs, withA11y]}>
+    <div>
+      <div className="row-items">
+        <Button
+          isLoading={knobButtonLoading()}          
+          shape="round-square"
+        >
+          Round-square
+        </Button>
+        <Button
+          isLoading={knobButtonLoading()}
+          color="primary"          
+          shape="round-square"
+        >
+          Round-square
+        </Button>
+        <Button
+          isLoading={knobButtonLoading()}
+          color="secondary"          
+          shape="round-square"
+        >
+          Round-square
+        </Button>
+        <Button
+          isLoading={knobButtonLoading()}          
+          shape="round-square"
+          disabled
+        >
+          Round-square
+        </Button>
+      </div>
+      <div className="row-items">
+        <Button
+          isLoading={knobButtonLoading()}          
+          shape="round-square"
+          variant="outlined"
+        >
+          Round-square
+        </Button>
+        <Button
+          isLoading={knobButtonLoading()}
+          color="primary"
+          variant="outlined"          
+          shape="round-square"
+        >
+          Round-square
+        </Button>
+        <Button
+          isLoading={knobButtonLoading()}
+          color="secondary"
+          variant="outlined"          
+          shape="round-square"
+        >
+          Round-square
+        </Button>
+        <Button
+          isLoading={knobButtonLoading()}          
+          shape="round-square"
+          variant="outlined"
+          disabled
+        >
+          Round-square
+        </Button>
+      </div>
+      <div className="row-items">
+        <Button
+          isLoading={knobButtonLoading()}          
+          shape="round-square"
+          variant="text"
+        >
+          Round-square
+        </Button>
+        <Button
+          isLoading={knobButtonLoading()}
+          color="primary"
+          variant="text"          
+          shape="round-square"
+        >
+          Round-square
+        </Button>
+        <Button
+          isLoading={knobButtonLoading()}
+          color="secondary"
+          variant="text"          
+          shape="round-square"
+        >
+          Round-square
+        </Button>
+        <Button
+          isLoading={knobButtonLoading()}          
+          shape="round-square"
+          variant="text"
+          disabled
+        >
+          Round-square
+        </Button>
+      </div>
+    </div>
+  </Story>
+</Preview>
+
 
 ### Circle buttons
 
@@ -209,6 +313,7 @@ Buttons allow users to make some actions. You can add a `href` attr to use it as
     </div>
   </Story>
 </Preview>
+
 
 ## Sizes
 
