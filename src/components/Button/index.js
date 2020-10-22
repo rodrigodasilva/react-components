@@ -13,7 +13,7 @@ const Button = ({
   color,
   variant,
   size,
-  shape, 
+  shape,
   startIcon,
   endIcon,
   href,
