@@ -1,13 +1,8 @@
-import {
-  Meta,
-  Story,
-  Preview,
-  Props,
-} from "@storybook/addon-docs/blocks";
+import { Meta, Story, Preview, Props } from "@storybook/addon-docs/blocks";
 import { withKnobs, boolean, select } from "@storybook/addon-knobs";
 import { withA11y } from "@storybook/addon-a11y";
 
-import {knobButtonLoading, knobButtonSizes} from './knobs'
+import { knobButtonLoading, knobButtonSizes } from "./knobs";
 
 import Button from ".";
 
@@ -99,37 +94,30 @@ O Button pode ser utlizado para realizar ações. Podendo adicionar a propriedad
   <Story name="Round-square" decorators={[withKnobs, withA11y]}>
     <div>
       <div className="row-items">
+        <Button isLoading={knobButtonLoading()} shape="round-square">
+          Round-square
+        </Button>
         <Button
-          isLoading={knobButtonLoading()}          
+          isLoading={knobButtonLoading()}
+          color="primary"
           shape="round-square"
         >
           Round-square
         </Button>
         <Button
           isLoading={knobButtonLoading()}
-          color="primary"          
+          color="secondary"
           shape="round-square"
         >
           Round-square
         </Button>
-        <Button
-          isLoading={knobButtonLoading()}
-          color="secondary"          
-          shape="round-square"
-        >
-          Round-square
-        </Button>
-        <Button
-          isLoading={knobButtonLoading()}          
-          shape="round-square"
-          disabled
-        >
+        <Button isLoading={knobButtonLoading()} shape="round-square" disabled>
           Round-square
         </Button>
       </div>
       <div className="row-items">
         <Button
-          isLoading={knobButtonLoading()}          
+          isLoading={knobButtonLoading()}
           shape="round-square"
           variant="outlined"
         >
@@ -138,7 +126,7 @@ O Button pode ser utlizado para realizar ações. Podendo adicionar a propriedad
         <Button
           isLoading={knobButtonLoading()}
           color="primary"
-          variant="outlined"          
+          variant="outlined"
           shape="round-square"
         >
           Round-square
@@ -146,13 +134,13 @@ O Button pode ser utlizado para realizar ações. Podendo adicionar a propriedad
         <Button
           isLoading={knobButtonLoading()}
           color="secondary"
-          variant="outlined"          
+          variant="outlined"
           shape="round-square"
         >
           Round-square
         </Button>
         <Button
-          isLoading={knobButtonLoading()}          
+          isLoading={knobButtonLoading()}
           shape="round-square"
           variant="outlined"
           disabled
@@ -162,7 +150,7 @@ O Button pode ser utlizado para realizar ações. Podendo adicionar a propriedad
       </div>
       <div className="row-items">
         <Button
-          isLoading={knobButtonLoading()}          
+          isLoading={knobButtonLoading()}
           shape="round-square"
           variant="text"
         >
@@ -171,7 +159,7 @@ O Button pode ser utlizado para realizar ações. Podendo adicionar a propriedad
         <Button
           isLoading={knobButtonLoading()}
           color="primary"
-          variant="text"          
+          variant="text"
           shape="round-square"
         >
           Round-square
@@ -179,13 +167,13 @@ O Button pode ser utlizado para realizar ações. Podendo adicionar a propriedad
         <Button
           isLoading={knobButtonLoading()}
           color="secondary"
-          variant="text"          
+          variant="text"
           shape="round-square"
         >
           Round-square
         </Button>
         <Button
-          isLoading={knobButtonLoading()}          
+          isLoading={knobButtonLoading()}
           shape="round-square"
           variant="text"
           disabled
@@ -196,7 +184,6 @@ O Button pode ser utlizado para realizar ações. Podendo adicionar a propriedad
     </div>
   </Story>
 </Preview>
-
 
 ### Circle buttons
 
@@ -314,13 +301,12 @@ O Button pode ser utlizado para realizar ações. Podendo adicionar a propriedad
   </Story>
 </Preview>
 
-
 ## Sizes
 
 ### Medium buttons
 
 <Preview>
-  <Story name="Medium" parameters={{ decorators: [withKnobs, withA11y] }}>
+  <Story name="Medium" decorators={[withKnobs, withA11y]}>
     <div>
       <div className="row-items">
         <Button isLoading={knobButtonLoading()} size="medium">
@@ -493,7 +479,7 @@ O Button pode ser utlizado para realizar ações. Podendo adicionar a propriedad
       </Button>
       <Button isLoading={knobButtonLoading()} endIcon="→" variant="outlined">
         With icon
-      </Button>      
+      </Button>
     </div>
   </Story>
 </Preview>

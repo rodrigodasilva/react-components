@@ -6,7 +6,7 @@ module.exports = {
     'storybook-addon-themes',
     '@storybook/addon-knobs/register',
     '@storybook/addon-a11y/register',
-    '@storybook/addon-viewport/register',
+    // '@storybook/addon-viewport/register',
     '@storybook/preset-create-react-app',
     {
       name: '@storybook/addon-docs',
