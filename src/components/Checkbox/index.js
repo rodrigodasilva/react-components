@@ -10,6 +10,7 @@ const Checkbox = ({
   label,
   labelPlacement,
   className,
+  type,
   error,
   ...props
 }) => {
@@ -20,7 +21,7 @@ const Checkbox = ({
       <Content
         className={classNames('content', `label-placement--${labelPlacement}`)}
       >
-        <input type="checkbox" id={selfId} {...props} />
+        <input type={type} id={selfId} {...props} />
         {label && (
           <label htmlFor={selfId} className="label">
             {label}
@@ -37,6 +38,7 @@ Checkbox.propTypes = {
   id: PropTypes.string,
   label: PropTypes.string,
   labelPlacement: PropTypes.oneOf(['start', 'end', 'top', 'bottom']),
+  type: PropTypes.oneOf(['checkbox', 'radio']),
   className: PropTypes.string,
   error: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
 };
@@ -45,6 +47,7 @@ Checkbox.defaultProps = {
   id: '',
   label: '',
   labelPlacement: 'end',
+  type: 'checkbox',
   className: '',
   error: '',
 };

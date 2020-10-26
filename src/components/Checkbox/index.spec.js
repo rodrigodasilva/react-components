@@ -56,6 +56,13 @@ describe('<Checkbox />', () => {
     expect(queryByText(feedBackError)).toBeInTheDocument();
   });
 
+  it('Should be render a radio input', () => {
+    const { getByLabelText } = render(<Checkbox type="radio" {...props} />);
+    const input = getByLabelText(props.label);
+
+    expect(input.type).toBe('radio');
+  });
+
   it('Should change value of input ', () => {
     const { getByLabelText } = render(<Checkbox {...props} />);
     const input = getByLabelText(props.label);

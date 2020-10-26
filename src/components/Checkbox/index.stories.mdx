@@ -46,6 +46,32 @@ import Checkbox from '.';
   </Story>
 </Preview>
 
+## Radio
+
+<Preview>
+  <Story name="Radio" decorators={[withKnobs, withA11y]}>
+    <form
+      className="row-items"
+      style={{ display: 'flex', justifyContent: 'space-between' }}
+    >
+      <Checkbox
+        label="Start"
+        labelPlacement="start"
+        type="radio"
+        name="option1"
+      />
+      <Checkbox label="End" type="radio" name="option1" />
+      <Checkbox label="Top" labelPlacement="top" type="radio" name="option1" />
+      <Checkbox
+        label="Bottom"
+        labelPlacement="bottom"
+        type="radio"
+        name="option1"
+      />
+    </form>
+  </Story>
+</Preview>
+
 ## Validation
 
 <Preview>
