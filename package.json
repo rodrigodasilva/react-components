@@ -1,5 +1,5 @@
 {
-  "name": "boteria-frontend",
+  "name": "react-components",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -13,15 +13,17 @@
     "react-dom": "^16.13.1",
     "react-hot-loader": "^4.13.0",
     "react-icons": "^3.11.0",
+    "react-imask": "^6.0.5",
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.1",
     "react-toastify": "^6.0.9",
-    "styled-components": "^5.2.0"
+    "styled-components": "^5.2.0",
+    "uniqid": "^5.2.0"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "react-scripts test --transformIgnorePatterns \"node_modules/(?!(imask)/)/\"",
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 9009 -s public",
     "deploy-storybook": "storybook-to-ghpages"

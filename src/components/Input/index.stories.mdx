@@ -1,0 +1,139 @@
+import {
+  Meta,
+  Story,
+  Description,
+  Preview,
+  Props,
+} from '@storybook/addon-docs/blocks';
+import { withKnobs } from '@storybook/addon-knobs';
+import { withA11y } from '@storybook/addon-a11y';
+import { FaGithub } from 'react-icons/fa';
+
+import Input from '.';
+
+<Meta title="Components/Inputs" component={Input} />
+
+# Input
+
+## Variants
+
+<Preview>
+  <Story name="Variants" decorators={[withKnobs, withA11y]}>
+    <form
+      className="row-items"
+      style={{ display: 'flex', flexDirection: 'column' }}
+    >
+      <Input label="Default" />
+      <Input label="Outlined" placeholder="placeholder" variant="outlined" />
+      <Input label="Text" value="123.456.789.09" variant="text" />
+    </form>
+  </Story>
+</Preview>
+
+## Shape
+
+<Preview>
+  <Story name="Shape" decorators={[withKnobs, withA11y]}>
+    <form
+      className="row-items"
+      style={{ display: 'flex', flexDirection: 'column' }}
+    >
+      <Input label="label" />
+      <Input label="label" shape="rounded" />
+      <Input shape="rounded" />
+    </form>
+  </Story>
+</Preview>
+
+## Icons
+
+<Preview>
+  <Story name="Icons" decorators={[withKnobs, withA11y]}>
+    <form
+      className="row-items"
+      style={{ display: 'flex', flexDirection: 'column' }}
+    >
+      <Input label="label" startIcon={<FaGithub color="#868686" />} />
+      <Input
+        label="label"
+        shape="rounded"
+        endIcon={<FaGithub color="#868686" />}
+      />
+      <Input
+        label="End icon"
+        variant="outlined"
+        endIcon={<FaGithub color="#868686" />}
+      />
+    </form>
+  </Story>
+</Preview>
+
+## Disabled
+
+<Preview>
+  <Story name="Disabled" decorators={[withKnobs, withA11y]}>
+    <div
+      className="row-items"
+      style={{ display: 'flex', flexDirection: 'column' }}
+    >
+      <Input label="disabled" disabled />
+      <Input
+        label="disabled"
+        placeholder="placeholder"
+        disabled
+        style={{ flex: '1' }}
+      />
+      <Input label="disabled" value="value" disabled />
+    </div>
+  </Story>
+</Preview>
+
+## Validation
+
+<Preview>
+  <Story name="Validation" decorators={[withKnobs, withA11y]}>
+    <div
+      className="row-items"
+      style={{ display: 'flex', flexDirection: 'column' }}
+    >
+      <Input label="CNPJ" error="Erro de validação" />
+      <Input label="CNPJ" error="Erro de validação" variant="outlined" />
+    </div>
+  </Story>
+</Preview>
+
+## Mask
+
+Usamos [imaskjs](https://github.com/uNmAnNeR/imaskjs) para formatar as máskaras no input.
+
+<Preview>
+  <Story name="Mask" decorators={[withKnobs, withA11y]}>
+    <div
+      className="row-items"
+      style={{ display: 'flex', flexDirection: 'column' }}
+    >
+      <Input
+        label="CPF/CNPJ"
+        mask={[{ mask: '000.000.000-00' }, { mask: '00.000.000/0000-00' }]}
+      />
+      <Input
+        label="Valor"
+        placeholder="R$ 0,00"
+        mask="R$ num"
+        blocks={{
+          num: {
+            mask: Number,
+            padFractionalZeros: true,
+            thousandsSeparator: '.',
+            radix: ',',
+            mapToRadix: ['.'],
+          },
+        }}
+      />
+    </div>
+  </Story>
+</Preview>
+
+# Props
+
+<Props of={Input} />
