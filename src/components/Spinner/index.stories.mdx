@@ -1,0 +1,33 @@
+import {
+  Meta,
+  Story,
+  Description,
+  Preview,
+  Props,
+} from '@storybook/addon-docs/blocks';
+import { withKnobs } from '@storybook/addon-knobs';
+import { withA11y } from '@storybook/addon-a11y';
+
+import { knobSpinnerSize } from '../../../.storybook/knobs/spinner';
+
+import Spinner from '.';
+
+<Meta title="Components/Spinner" component={Spinner} />
+
+# Spinner
+
+Spinners expressão um tempo de carregamento. Isto é feito utilizando apenas css para criar o visual e animação
+
+<Preview>
+  <Story name="Indeterminated" decorators={[withKnobs, withA11y]}>
+    <div className="row-items">
+      <Spinner size={knobSpinnerSize()} />
+      <Spinner size={knobSpinnerSize()} color="primary" />
+      <Spinner size={knobSpinnerSize()} color="secondary" />
+    </div>
+  </Story>
+</Preview>
+
+# Props
+
+<Props of={Spinner} />

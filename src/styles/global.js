@@ -90,16 +90,16 @@ const GlobalStyles = createGlobalStyle`
   }
 
   *::placeholder {
-    color: var(--secondary-text);
+    color: var(--text-color-lighten);
   }
 
   *::-webkit-input-placeholder {
-    color: var(--secondary-text);
+    color: var(--text-color-lighten);
   }
 
   body {
     background-color: var(--bg);
-    color: var(--primary-text);
+    color: var(--text-color);
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
     font-size: 2rem;
     min-height: calc(100vh);
@@ -123,7 +123,7 @@ const GlobalStyles = createGlobalStyle`
     --screen-md: 992px;
     --screen-lg: 1280px;
     --screen-xlg: 1440px;
-    --screen-max-container: var(--screen-xlg);   
+    --screen-max-container: var(--screen-xlg);
 
     --black: #111;
     --white: #fff;
@@ -134,7 +134,7 @@ const GlobalStyles = createGlobalStyle`
     --blue-1: #daf0ff;
     --blue-2: #0D84FF;
     --blue-3: #0060a7;
-    --green-1: #15CE7E;    
+    --green-1: #15CE7E;
     --orange-1: #F49400;
     --red-1: #F15F52;
     --red-2: #ff917f;
@@ -156,8 +156,8 @@ const GlobalStyles = createGlobalStyle`
     --danger-color: var(--red-1);
     --danger-color-lighten: var(--red-2);
     --danger-color-contrast: var(--white);
-    --text-color: var(--gray-4);
-    --text-color-lighten: var(--gray-3);   
+    --text-color: #515F75;
+    --text-color-lighten: #999999;
   }
 `;
 
