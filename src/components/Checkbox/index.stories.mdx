@@ -1,0 +1,101 @@
+import {
+  Meta,
+  Story,
+  Description,
+  Preview,
+  Props,
+} from '@storybook/addon-docs/blocks';
+import { withKnobs } from '@storybook/addon-knobs';
+import { withA11y } from '@storybook/addon-a11y';
+import { FaGithub } from 'react-icons/fa';
+
+import Checkbox from '.';
+
+<Meta title="Components/Checkbox" component={Checkbox} />
+
+# Checkbox
+
+## Base
+
+<Preview>
+  <Story name="Base" decorators={[withKnobs, withA11y]}>
+    <form
+      className="row-items"
+      style={{ display: 'flex', justifyContent: 'space-between' }}
+    >
+      <Checkbox label="Start" />
+      <Checkbox label="End" />
+      <Checkbox label="Disabled" disabled />
+    </form>
+  </Story>
+</Preview>
+
+## Label placement
+
+<Preview>
+  <Story name="Label placement" decorators={[withKnobs, withA11y]}>
+    <form
+      className="row-items"
+      style={{ display: 'flex', justifyContent: 'space-between' }}
+    >
+      <Checkbox label="Start" labelPlacement="start" />
+      <Checkbox label="End" />
+      <Checkbox label="Top" labelPlacement="top" />
+      <Checkbox label="Bottom" labelPlacement="bottom" />
+    </form>
+  </Story>
+</Preview>
+
+## Radio
+
+<Preview>
+  <Story name="Radio" decorators={[withKnobs, withA11y]}>
+    <form
+      className="row-items"
+      style={{ display: 'flex', justifyContent: 'space-between' }}
+    >
+      <Checkbox
+        label="Start"
+        labelPlacement="start"
+        type="radio"
+        name="option1"
+      />
+      <Checkbox label="End" type="radio" name="option1" />
+      <Checkbox label="Top" labelPlacement="top" type="radio" name="option1" />
+      <Checkbox
+        label="Bottom"
+        labelPlacement="bottom"
+        type="radio"
+        name="option1"
+      />
+    </form>
+  </Story>
+</Preview>
+
+## Validation
+
+<Preview>
+  <Story name="Validation" decorators={[withKnobs, withA11y]}>
+    <form
+      className="row-items"
+      style={{ display: 'flex', justifyContent: 'space-between' }}
+    >
+      <Checkbox
+        label="Start"
+        labelPlacement="start"
+        error="Erro de validação"
+      />
+      <Checkbox label="End" error="Erro de validação" />
+      <Checkbox label="Top" labelPlacement="top" error="Erro de validação" />
+      <Checkbox
+        label="Bottom"
+        labelPlacement="bottom"
+        error="Erro de validação"
+      />
+    </form>
+  </Story>
+</Preview>
+
+# Props
+
+<Props of={Checkbox} />
