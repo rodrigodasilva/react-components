@@ -3,11 +3,10 @@ import { Router } from 'react-router-dom';
 import { hot } from 'react-hot-loader/root';
 import { setConfig } from 'react-hot-loader';
 
-import { ToastContainer } from 'react-toastify';
-
 import GlobalStyle from './styles/global';
 import Routes from './routes';
 import history from './services/history';
+import { ContainerToast } from './components/CustomToast';
 
 setConfig({
   showReactDomPatchNotification: false,
@@ -18,7 +17,7 @@ function App() {
     <Router history={history}>
       <Routes />
       <GlobalStyle />
-      <ToastContainer autoClose={3000} />
+      <ContainerToast />
     </Router>
   );
 }

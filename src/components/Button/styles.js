@@ -16,6 +16,7 @@ export const Container = styled.button`
     transition-duration: 0.25s;
     transition-property: border-color;
     will-change: border-color;
+    width: max-content;
 
     &::before {
       bottom: 0;
