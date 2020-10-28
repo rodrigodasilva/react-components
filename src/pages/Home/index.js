@@ -1,8 +1,8 @@
 import React from 'react';
 // import { FaGithub } from 'react-icons/fa';
 
-import { toast } from '../../components/CustomToast';
-import Button from '../../components/Button';
+import { toast } from '~/components/CustomToast';
+import Button from '~/components/Button';
 
 import { Container } from './styles';
 

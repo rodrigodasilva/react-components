@@ -109,7 +109,7 @@ const GlobalStyles = createGlobalStyle`
     will-change: background-color;
   }
 
-  #root, #docs-root {
+  :root {
     --space-xxs: 4px;
     --space-xs: 8px;
     --space-sm: 16px;
