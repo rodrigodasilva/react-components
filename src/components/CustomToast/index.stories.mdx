@@ -1,0 +1,53 @@
+import {
+  Meta,
+  Story,
+  Description,
+  Preview,
+} from '@storybook/addon-docs/blocks';
+import { withKnobs } from '@storybook/addon-knobs';
+import { withA11y } from '@storybook/addon-a11y';
+import { FaGithub } from 'react-icons/fa';
+
+import { toast } from '.';
+import Button from '../Button';
+
+<Meta title="Components/Toast" />
+
+# Toast
+
+Componente desenvolvido para exibir notificações.
+
+### Como usar:
+
+1.Faça sua importação
+
+```js
+import { toast } from '../components/CustomToast';
+```
+
+2.Chame a função para abrir o toast de acordo com o tipo que deseja.
+
+```js
+toast.default('Default', 'Descrição Default');
+toast.success('Sucesso', 'Descrição do sucesso');
+toast.error('Erro', 'Descrição do Erro');
+toast.warn('Warn', 'Descrição do Warn');
+
+// Incluindo botão e link para redirecionamento
+toast.success('Mensagem de sucesso', '', 'configurar', 'https://google.com');
+```
+
+## Base
+
+<Preview>
+  <Story name="Base" decorators={[withKnobs, withA11y]}>
+    <form
+      className="row-items"
+      style={{ display: 'flex', justifyContent: 'space-between' }}
+    >
+      <Button onClick={() => toast.success('Sucesso', 'Descrição do sucesso')}>
+        open
+      </Button>
+    </form>
+  </Story>
+</Preview>

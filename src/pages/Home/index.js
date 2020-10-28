@@ -1,29 +1,39 @@
 import React from 'react';
-import { FaGithub } from 'react-icons/fa';
+// import { FaGithub } from 'react-icons/fa';
 
+import { toast } from '../../components/CustomToast';
 import Button from '../../components/Button';
 
 import { Container } from './styles';
 
 export default function Home() {
+  const handleOpenToast = () => {
+    toast.default('Mensagem default', 'Descrição da mensagem default!');
+    toast.success('Mensagem de sucesso', 'Descrição da mensagem de sucesso!');
+    toast.error('Mensagem de erro', 'Descrição da mensagem de erro!');
+    toast.warn('Mensagem de alerta', 'Descrição da mensagem de alerta!');
+    toast.success(
+      'Mensagem de sucesso',
+      '',
+      'configurar',
+      'https://google.com'
+    );
+  };
+
   return (
     <Container>
-      <h1>Variants</h1>
+      {/* <h1>Variants</h1>
       <br />
       <h3>Filled button</h3>
-      <br />
+      <br /> */}
       <p style={{ display: 'flex' }}>
-        <Button>Default</Button>
-        <Button color="primary" isLoading>
-          Primary
-        </Button>
-        <Button color="secondary" isLoading>
-          Secondary
-        </Button>
+        <Button onClick={() => handleOpenToast()}> Default</Button>
+        {/* <Button color="primary">Primary</Button> */}
+        {/* <Button color="secondary">Secondary</Button>
         <Button color="success">Success</Button>
-        <Button color="danger">Danger</Button>
+        <Button color="danger">Danger</Button> */}
       </p>
-      <h3>Icons</h3>
+      {/* <h3>Icons</h3>
       <br />
       <p style={{ display: 'flex' }}>
         <Button startIcon={<FaGithub />} endIcon={<FaGithub />}>
@@ -369,11 +379,11 @@ export default function Home() {
         <Button color="danger" variant="text">
           Danger
         </Button>
-      </p>
+      </p> */}
 
-      <Button variant="outlined" shape="round-square" fullWidth>
+      {/* <Button variant="outlined" shape="round-square" fullWidth>
         Default
-      </Button>
+      </Button> */}
     </Container>
   );
 }
