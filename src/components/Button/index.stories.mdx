@@ -21,7 +21,13 @@ O Button pode ser utlizado para realizar ações. Podendo adicionar a propriedad
 
 <Preview>
   <Story name="Filled" decorators={[withKnobs, withA11y]}>
-    <div className="row-items">
+    <div
+      style={{
+        display: 'flex',
+        justifyContent: 'space-between',
+        margin: 8,
+      }}
+    >
       <Button isLoading={knobButtonLoading()}>Default</Button>
       <Button isLoading={knobButtonLoading()} color="primary">
         Primary
@@ -43,7 +49,13 @@ O Button pode ser utlizado para realizar ações. Podendo adicionar a propriedad
 
 <Preview>
   <Story name="Outlined" decorators={[withKnobs, withA11y]}>
-    <div className="row-items">
+    <div
+      style={{
+        display: 'flex',
+        justifyContent: 'space-between',
+        margin: 8,
+      }}
+    >
       <Button isLoading={knobButtonLoading()} variant="outlined">
         Default
       </Button>
@@ -72,7 +84,13 @@ O Button pode ser utlizado para realizar ações. Podendo adicionar a propriedad
 
 <Preview>
   <Story name="Text" decorators={[withKnobs, withA11y]}>
-    <div className="row-items">
+    <div
+      style={{
+        display: 'flex',
+        justifyContent: 'space-between',
+        margin: 8,
+      }}
+    >
       <Button isLoading={knobButtonLoading()} variant="text">
         Default
       </Button>
@@ -96,7 +114,13 @@ O Button pode ser utlizado para realizar ações. Podendo adicionar a propriedad
 <Preview>
   <Story name="Round-square" decorators={[withKnobs, withA11y]}>
     <div>
-      <div className="row-items">
+      <div
+        style={{
+          display: 'flex',
+          justifyContent: 'space-between',
+          margin: 8,
+        }}
+      >
         <Button isLoading={knobButtonLoading()} shape="round-square">
           Round-square
         </Button>
@@ -118,7 +142,13 @@ O Button pode ser utlizado para realizar ações. Podendo adicionar a propriedad
           Round-square
         </Button>
       </div>
-      <div className="row-items">
+      <div
+        style={{
+          display: 'flex',
+          justifyContent: 'space-between',
+          margin: 8,
+        }}
+      >
         <Button
           isLoading={knobButtonLoading()}
           shape="round-square"
@@ -151,7 +181,13 @@ O Button pode ser utlizado para realizar ações. Podendo adicionar a propriedad
           Round-square
         </Button>
       </div>
-      <div className="row-items">
+      <div
+        style={{
+          display: 'flex',
+          justifyContent: 'space-between',
+          margin: 8,
+        }}
+      >
         <Button
           isLoading={knobButtonLoading()}
           shape="round-square"
@@ -193,7 +229,13 @@ O Button pode ser utlizado para realizar ações. Podendo adicionar a propriedad
 <Preview>
   <Story name="Circle" decorators={[withKnobs, withA11y]}>
     <div>
-      <div className="row-items">
+      <div
+        style={{
+          display: 'flex',
+          justifyContent: 'space-between',
+          margin: 8,
+        }}
+      >
         <Button
           isLoading={knobButtonLoading()}
           size={knobButtonSizes()}
@@ -226,7 +268,13 @@ O Button pode ser utlizado para realizar ações. Podendo adicionar a propriedad
           @
         </Button>
       </div>
-      <div className="row-items">
+      <div
+        style={{
+          display: 'flex',
+          justifyContent: 'space-between',
+          margin: 8,
+        }}
+      >
         <Button
           isLoading={knobButtonLoading()}
           size={knobButtonSizes()}
@@ -263,7 +311,13 @@ O Button pode ser utlizado para realizar ações. Podendo adicionar a propriedad
           @
         </Button>
       </div>
-      <div className="row-items">
+      <div
+        style={{
+          display: 'flex',
+          justifyContent: 'space-between',
+          margin: 8,
+        }}
+      >
         <Button
           isLoading={knobButtonLoading()}
           size={knobButtonSizes()}
@@ -311,7 +365,13 @@ O Button pode ser utlizado para realizar ações. Podendo adicionar a propriedad
 <Preview>
   <Story name="Medium" decorators={[withKnobs, withA11y]}>
     <div>
-      <div className="row-items">
+      <div
+        style={{
+          display: 'flex',
+          justifyContent: 'space-between',
+          margin: 8,
+        }}
+      >
         <Button isLoading={knobButtonLoading()} size="medium">
           Default
         </Button>
@@ -325,7 +385,13 @@ O Button pode ser utlizado para realizar ações. Podendo adicionar a propriedad
           Disabled
         </Button>
       </div>
-      <div className="row-items">
+      <div
+        style={{
+          display: 'flex',
+          justifyContent: 'space-between',
+          margin: 8,
+        }}
+      >
         <Button
           isLoading={knobButtonLoading()}
           size="medium"
@@ -358,7 +424,13 @@ O Button pode ser utlizado para realizar ações. Podendo adicionar a propriedad
           Disabled
         </Button>
       </div>
-      <div className="row-items">
+      <div
+        style={{
+          display: 'flex',
+          justifyContent: 'space-between',
+          margin: 8,
+        }}
+      >
         <Button isLoading={knobButtonLoading()} size="medium" variant="text">
           Default
         </Button>
@@ -396,7 +468,13 @@ O Button pode ser utlizado para realizar ações. Podendo adicionar a propriedad
 <Preview>
   <Story name="Small" decorators={[withKnobs, withA11y]}>
     <div>
-      <div className="row-items">
+      <div
+        style={{
+          display: 'flex',
+          justifyContent: 'space-between',
+          margin: 8,
+        }}
+      >
         <Button isLoading={knobButtonLoading()} size="small">
           Default
         </Button>
@@ -410,7 +488,13 @@ O Button pode ser utlizado para realizar ações. Podendo adicionar a propriedad
           Disabled
         </Button>
       </div>
-      <div className="row-items">
+      <div
+        style={{
+          display: 'flex',
+          justifyContent: 'space-between',
+          margin: 8,
+        }}
+      >
         <Button isLoading={knobButtonLoading()} size="small" variant="outlined">
           Default
         </Button>
@@ -439,7 +523,13 @@ O Button pode ser utlizado para realizar ações. Podendo adicionar a propriedad
           Disabled
         </Button>
       </div>
-      <div className="row-items">
+      <div
+        style={{
+          display: 'flex',
+          justifyContent: 'space-between',
+          margin: 8,
+        }}
+      >
         <Button isLoading={knobButtonLoading()} size="small" variant="text">
           Default
         </Button>
@@ -476,7 +566,13 @@ O Button pode ser utlizado para realizar ações. Podendo adicionar a propriedad
 
 <Preview>
   <Story name="Icons" decorators={[withKnobs, withA11y]}>
-    <div className="row-items">
+    <div
+      style={{
+        display: 'flex',
+        justifyContent: 'space-around',
+        margin: 8,
+      }}
+    >
       <Button isLoading={knobButtonLoading()} startIcon="←" variant="outlined">
         With icon
       </Button>
@@ -491,7 +587,13 @@ O Button pode ser utlizado para realizar ações. Podendo adicionar a propriedad
 
 <Preview>
   <Story name="Loading state" decorators={[withKnobs, withA11y]}>
-    <div className="row-items">
+    <div
+      style={{
+        display: 'flex',
+        justifyContent: 'space-around',
+        margin: 8,
+      }}
+    >
       <Button isLoading={true} color="primary">
         Loading example
       </Button>
