@@ -1,24 +1,46 @@
-import React from 'react';
+import React, { useState } from 'react';
 // import { FaGithub } from 'react-icons/fa';
 
-import { toast } from '~/components/CustomToast';
-import Button from '~/components/Button';
+// import { toast } from '~/components/CustomToast';
+// import Button from '~/components/Button';
+import ReactSelect from '~/components/ReactSelect';
 
 import { Container } from './styles';
 
 export default function Home() {
-  const handleOpenToast = () => {
-    toast.default('Mensagem default', 'Descrição da mensagem default!');
-    toast.success('Mensagem de sucesso', 'Descrição da mensagem de sucesso!');
-    toast.error('Mensagem de erro', 'Descrição da mensagem de erro!');
-    toast.warn('Mensagem de alerta', 'Descrição da mensagem de alerta!');
-    toast.success(
-      'Mensagem de sucesso',
-      '',
-      'configurar',
-      'https://google.com'
-    );
+  const [options, setOptions] = useState([
+    { label: 'option 1', value: '1' },
+    { label: 'option 2', value: '2' },
+    { label: 'option 3', value: '3' },
+  ]);
+  const [singleValue, setSingleValue] = useState({});
+  const [multiValues, setMultiValues] = useState([]);
+
+  const handleCreateOption = (_value) => {
+    setOptions([...options, { label: _value, value: _value }]);
+    setMultiValues([...multiValues, { label: _value, value: _value }]);
   };
+
+  const handleSelectSingleValue = (_value) => {
+    setSingleValue(_value);
+  };
+
+  const handleSelectMultiValue = (_values) => {
+    setMultiValues(_values);
+  };
+
+  // const handleOpenToast = () => {
+  //   toast.default('Mensagem default', 'Descrição da mensagem default!');
+  //   toast.success('Mensagem de sucesso', 'Descrição da mensagem de sucesso!');
+  //   toast.error('Mensagem de erro', 'Descrição da mensagem de erro!');
+  //   toast.warn('Mensagem de alerta', 'Descrição da mensagem de alerta!');
+  //   toast.success(
+  //     'Mensagem de sucesso',
+  //     '',
+  //     'configurar',
+  //     'https://google.com'
+  //   );
+  // };
 
   return (
     <Container>
@@ -26,13 +48,73 @@ export default function Home() {
       <br />
       <h3>Filled button</h3>
       <br /> */}
-      <p style={{ display: 'flex' }}>
-        <Button onClick={() => handleOpenToast()}> Default</Button>
-        {/* <Button color="primary">Primary</Button> */}
-        {/* <Button color="secondary">Secondary</Button>
-        <Button color="success">Success</Button>
-        <Button color="danger">Danger</Button> */}
-      </p>
+      <div style={{ display: 'flex', margin: 20 }}>
+        <ReactSelect
+          value={singleValue}
+          onChange={handleSelectSingleValue}
+          options={options}
+          label="Default"
+        />
+      </div>
+
+      <div style={{ display: 'flex', margin: 20 }}>
+        <ReactSelect
+          value={singleValue}
+          onChange={handleSelectSingleValue}
+          options={options}
+          label="Single Creatable"
+          isCreatable
+          onCreateOption={(value) => handleCreateOption(value)}
+        />
+      </div>
+
+      <div style={{ display: 'flex', margin: 20 }}>
+        <ReactSelect
+          value={singleValue}
+          onChange={handleSelectSingleValue}
+          options={options}
+          label="Single Limpavel"
+          isCreatable
+          isClearable
+          onCreateOption={(value) => handleCreateOption(value)}
+        />
+      </div>
+
+      <div style={{ display: 'flex', margin: 20 }}>
+        <ReactSelect
+          value={multiValues}
+          options={options}
+          onChange={handleSelectMultiValue}
+          label="Multi select"
+          isMulti
+          isClearable
+        />
+      </div>
+
+      <div style={{ display: 'flex', margin: 20 }}>
+        <ReactSelect
+          value={multiValues}
+          options={options}
+          label="Create Option"
+          isMulti
+          onChange={handleSelectMultiValue}
+          isCreatable
+          onCreateOption={(value) => handleCreateOption(value)}
+        />
+      </div>
+
+      <div style={{ display: 'flex', margin: 20 }}>
+        <ReactSelect
+          value={multiValues}
+          onChange={handleSelectMultiValue}
+          options={options}
+          label="Create Option com input"
+          isMulti
+          isCreatable
+          menuIsOpen={false}
+          onCreateOption={(value) => handleCreateOption(value)}
+        />
+      </div>
       {/* <h3>Icons</h3>
       <br />
       <p style={{ display: 'flex' }}>

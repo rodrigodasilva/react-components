@@ -18,6 +18,7 @@
     "react-imask": "^6.0.5",
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.1",
+    "react-select": "^3.1.0",
     "react-toastify": "^6.0.9",
     "styled-components": "^5.2.0",
     "uniqid": "^5.2.0"
@@ -28,8 +29,7 @@
     "test": "react-app-rewired test --transformIgnorePatterns \"node_modules/(?!(imask)/)/\"",
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 9009 -s public",
-    "build-storybook": "build-storybook -s public",
-    "deploy-storybook": "storybook-to-ghpages"
+    "build-storybook": "build-storybook -s public"
   },
   "eslintConfig": {
     "extends": "react-app"
