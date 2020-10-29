@@ -1,8 +1,8 @@
 import { create } from '@storybook/theming/create'
 
-const $blue = 'rgb(0, 127, 216)'
+const $blue = '#0D84FF'
 const $grayDark = 'rgb(33, 33, 33)'
-const $orange = 'rgb(255, 125, 0)'
+const $orange = '#F49400'
 const $transparent = 'transparent'
 const $white = 'rgb(255, 255, 255, .9)'
 const $white2 = 'rgb(255, 255, 255, .8)'
