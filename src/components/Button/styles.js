@@ -59,7 +59,8 @@ export const Container = styled.button`
   }
 
   .startIcon {
-    display: inline-block;
+    display: flex;
+    align-items: center;
     position: relative;
 
     &:not(:empty) {
@@ -68,7 +69,8 @@ export const Container = styled.button`
   }
 
   .endIcon {
-    display: inline-block;
+    display: flex;
+    align-items: center;
     position: relative;
 
     &:not(:empty) {
