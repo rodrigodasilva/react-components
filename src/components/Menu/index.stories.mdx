@@ -1,0 +1,117 @@
+import {
+  Meta,
+  Story,
+  Description,
+  Preview,
+  Props,
+} from '@storybook/addon-docs/blocks';
+import { withKnobs } from '@storybook/addon-knobs';
+import { withA11y } from '@storybook/addon-a11y';
+import { FaGithub, FaChevronDown } from 'react-icons/fa';
+import { MdMoreVert } from 'react-icons/md';
+
+import { knobSpinnerSize } from '../../../.storybook/knobs/spinner';
+
+import Button from '../Button';
+import Menu from '.';
+
+<Meta title="Components/Menu" component={Menu} />
+
+# Menu
+
+## Theme
+
+<Preview>
+  <Story name="Theme" decorators={[withKnobs, withA11y]}>
+    <div className="row-items justify-center" style={{ minHeight: 150 }}>
+      <Menu theme="dark" button={<Button>Dark</Button>}>
+        <button type="button">Action</button>
+        <button type="button">Another action</button>
+        <button type="button">Something else here</button>
+      </Menu>
+      <Menu theme="light" button={<Button>Light</Button>}>
+        <button type="button">Action</button>
+        <button type="button">Another action</button>
+        <button type="button">Something else here</button>
+      </Menu>
+    </div>
+  </Story>
+</Preview>
+
+## Postion
+
+<Preview>
+  <Story name="Position" decorators={[withKnobs, withA11y]}>
+    <div
+      className="row-items align-center lg-offset-top"
+      style={{ minHeight: 200 }}
+    >
+      <Menu theme="dark" button={<Button>Bottom</Button>}>
+        <button type="button">Action</button>
+        <button type="button">Another action</button>
+        <button type="button">Something else here</button>
+      </Menu>
+      <Menu theme="dark" position="right" button={<Button>Right</Button>}>
+        <button type="button">Action</button>
+        <button type="button">Another action</button>
+        <button type="button">Something else here</button>
+      </Menu>
+      <Menu theme="dark" position="top" button={<Button>Top</Button>}>
+        <button type="button">Action</button>
+        <button type="button">Another action</button>
+        <button type="button">Something else here</button>
+      </Menu>
+      <Menu theme="dark" position="left" button={<Button>Left</Button>}>
+        <button type="button">Action</button>
+        <button type="button">Another action</button>
+        <button type="button">Something else here</button>
+      </Menu>
+    </div>
+  </Story>
+</Preview>
+
+## Variations examples
+
+<Preview>
+  <Story name="Button variations" decorators={[withKnobs, withA11y]}>
+    <div
+      className="row-items align-center lg-offset-top"
+      style={{ minHeight: 220 }}
+    >
+      <Menu theme="dark" button={<FaGithub size={38} />}>
+        <button type="button">Action</button>
+        <button type="button">Another action</button>
+        <button type="button">Something else here</button>
+      </Menu>
+      <Menu
+        theme="dark"
+        button={
+          <Button color="primary" endIcon={<FaChevronDown />}>
+            Options
+          </Button>
+        }
+      >
+        <button type="button">Action</button>
+        <button type="button">Another action</button>
+        <button type="button">Something else here</button>
+      </Menu>
+      <Menu
+        theme="dark"
+        position="right"
+        button={
+          <Button shape="circle" variant="text">
+            <MdMoreVert size={24} />
+          </Button>
+        }
+      >
+        <button type="button">Action</button>
+        <button type="button">Another action</button>
+        <button type="button">Something else here</button>
+      </Menu>
+    </div>
+  </Story>
+</Preview>
+
+# Props
+
+<Props of={Menu} />

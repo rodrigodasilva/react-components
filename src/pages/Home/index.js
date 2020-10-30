@@ -1,63 +1,148 @@
-import React, { useState } from 'react';
+import React from 'react';
 // import { FaGithub } from 'react-icons/fa';
 
 // import { toast } from '~/components/CustomToast';
-// import Button from '~/components/Button';
-import ReactSelect from '~/components/ReactSelect';
+import Button from '~/components/Button';
+// import ReactSelect from '~/components/ReactSelect';
+import Menu from '~/components/Menu';
 
 import { Container } from './styles';
 
 export default function Home() {
-  const [options, setOptions] = useState([
-    { label: 'option 1', value: '1' },
-    { label: 'option 2', value: '2' },
-    { label: 'option 3', value: '3' },
-  ]);
-  const [singleValue, setSingleValue] = useState({});
-  const [multiValues, setMultiValues] = useState([]);
-
-  const handleCreateOption = (_value) => {
-    setOptions([...options, { label: _value, value: _value }]);
-    setMultiValues([...multiValues, { label: _value, value: _value }]);
-  };
-
-  const handleSelectSingleValue = (_value) => {
-    setSingleValue(_value);
-  };
-
-  const handleSelectMultiValue = (_values) => {
-    setMultiValues(_values);
-  };
-
-  // const handleOpenToast = () => {
-  //   toast.default('Mensagem default', 'Descrição da mensagem default!');
-  //   toast.success('Mensagem de sucesso', 'Descrição da mensagem de sucesso!');
-  //   toast.error('Mensagem de erro', 'Descrição da mensagem de erro!');
-  //   toast.warn('Mensagem de alerta', 'Descrição da mensagem de alerta!');
-  //   toast.success(
-  //     'Mensagem de sucesso',
-  //     '',
-  //     'configurar',
-  //     'https://google.com'
-  //   );
-  // };
-
   return (
     <Container>
       {/* <h1>Variants</h1>
       <br />
       <h3>Filled button</h3>
       <br /> */}
-      <div style={{ display: 'flex', margin: 20 }}>
-        <ReactSelect
-          value={singleValue}
-          onChange={handleSelectSingleValue}
-          options={options}
-          label="Default"
-        />
+      <div style={{ display: 'flex', justifyContent: 'center', margin: 20 }}>
+        <Menu theme="dark" button={<Button>Abrir light</Button>}>
+          <button type="button">Action</button>
+          <button type="button">Another action</button>
+          <button type="button">Something else here</button>
+        </Menu>
+
+        <Menu button={<Button>Abrir menu</Button>}>
+          <button type="button">Action</button>
+          <button type="button">Another action</button>
+          <button type="button">Something else here</button>
+        </Menu>
       </div>
 
-      <div style={{ display: 'flex', margin: 20 }}>
+      <div style={{ display: 'flex', justifyContent: 'center', margin: 20 }}>
+        <Menu theme="dark" button={<Button size="large">Abrir menu</Button>}>
+          <button type="button">Action sssssssssss aaaaaaaa</button>
+          <button type="button">Another action</button>
+          <button type="button">Something else here</button>
+        </Menu>
+        <Menu button={<Button size="large">Abrir menu</Button>}>
+          <button type="button">Action sssssssssss aaaaaaaa</button>
+          <button type="button">Another action</button>
+          <button type="button">Something else here</button>
+        </Menu>
+      </div>
+
+      <div style={{ display: 'flex', justifyContent: 'center', margin: 20 }}>
+        <Menu theme="dark" position="top" button={<Button>abrir Top</Button>}>
+          <button type="button">Action sssssssssss aaaaaaaa</button>
+          <button type="button">Another action</button>
+          <button type="button">Something else here</button>
+        </Menu>
+        <Menu position="top" button={<Button>abrir Top</Button>}>
+          <button type="button">Action sssssssssss aaaaaaaa</button>
+          <button type="button">Another action</button>
+          <button type="button">Something else here</button>
+        </Menu>
+      </div>
+
+      <div style={{ display: 'flex', justifyContent: 'center', margin: 20 }}>
+        <Menu
+          theme="dark"
+          position="top"
+          button={<Button size="large">abrir Top</Button>}
+        >
+          <button type="button">Action sssssssssss aaaaaaaa</button>
+          <button type="button">Another action</button>
+          <button type="button">Something else here</button>
+        </Menu>
+        <Menu position="top" button={<Button size="large">abrir Top</Button>}>
+          <button type="button">Action sssssssssss aaaaaaaa</button>
+          <button type="button">Another action</button>
+          <button type="button">Something else here</button>
+        </Menu>
+      </div>
+
+      <div style={{ display: 'flex', justifyContent: 'center', margin: 20 }}>
+        <Menu theme="dark" position="left" button={<Button>abrir left</Button>}>
+          <button type="button">Action sssssssssss aaaaaaaa</button>
+          <button type="button">Another action</button>
+          <button type="button">Something else here</button>
+        </Menu>
+        <Menu position="left" button={<Button>abrir left</Button>}>
+          <button type="button">Action sssssssssss aaaaaaaa</button>
+          <button type="button">Another action</button>
+          <button type="button">Something else here</button>
+        </Menu>
+      </div>
+
+      <div style={{ display: 'flex', justifyContent: 'center', margin: 20 }}>
+        <Menu
+          theme="dark"
+          position="left"
+          button={<Button size="large">abrir left teste texto</Button>}
+        >
+          <button type="button">Action sssssssssss aaaaaaaa</button>
+          <button type="button">Another action</button>
+          <button type="button">Something else here</button>
+        </Menu>
+        <Menu
+          position="left"
+          button={<Button size="large">abrir left teste texto</Button>}
+        >
+          <button type="button">Action sssssssssss aaaaaaaa</button>
+          <button type="button">Another action</button>
+          <button type="button">Something else here</button>
+        </Menu>
+      </div>
+
+      <div style={{ display: 'flex', justifyContent: 'center', margin: 20 }}>
+        <Menu
+          theme="dark"
+          position="right"
+          button={<Button>abrir right</Button>}
+        >
+          <button type="button">Action sssssssssss aaaaaaaa</button>
+          <button type="button">Another action</button>
+          <button type="button">Something else here</button>
+        </Menu>
+        <Menu position="right" button={<Button>abrir right</Button>}>
+          <button type="button">Action sssssssssss aaaaaaaa</button>
+          <button type="button">Another action</button>
+          <button type="button">Something else here</button>
+        </Menu>
+      </div>
+
+      <div style={{ display: 'flex', justifyContent: 'center', margin: 20 }}>
+        <Menu
+          position="right"
+          theme="dark"
+          button={<Button size="large">abrir right teste texto</Button>}
+        >
+          <button type="button">Action sssssssssss aaaaaaaa</button>
+          <button type="button">Another action</button>
+          <button type="button">Something else here</button>
+        </Menu>
+        <Menu
+          position="right"
+          button={<Button size="large">abrir right teste texto</Button>}
+        >
+          <button type="button">Action sssssssssss aaaaaaaa</button>
+          <button type="button">Another action</button>
+          <button type="button">Something else here</button>
+        </Menu>
+      </div>
+
+      {/* <div style={{ display: 'flex', margin: 20 }}>
         <ReactSelect
           value={singleValue}
           onChange={handleSelectSingleValue}
@@ -114,7 +199,7 @@ export default function Home() {
           menuIsOpen={false}
           onCreateOption={(value) => handleCreateOption(value)}
         />
-      </div>
+      </div> */}
       {/* <h3>Icons</h3>
       <br />
       <p style={{ display: 'flex' }}>
