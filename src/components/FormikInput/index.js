@@ -1,7 +1,9 @@
 import React from 'react';
 import { connect } from 'formik';
 
-function extractInputProps({ formik, options, ...otherProps }, option) {
+import { Container } from './styles';
+
+function extractInputProps({ formik, ...otherProps }, option) {
   const props = {
     value: formik.values[otherProps.name],
     onChange: formik.handleChange,
@@ -12,7 +14,7 @@ function extractInputProps({ formik, options, ...otherProps }, option) {
   if (props.type === 'checkbox') {
     props.value = option.value;
     props.checked = formik.values[props.name].includes(option.value);
-    props.onChange = e => {
+    props.onChange = (e) => {
       const val = formik.values[props.name];
 
       if (e.target.checked) {
@@ -31,32 +33,39 @@ function extractInputProps({ formik, options, ...otherProps }, option) {
   return props;
 }
 
-const TextInput = props => <input {...extractInputProps(props)} />;
-const TextAreaInput = props => <textarea {...extractInputProps(props)} />;
+const TextInput = (props) => <input {...extractInputProps(props)} />;
+const TextAreaInput = (props) => <textarea {...extractInputProps(props)} />;
 
-const SelectInput = props => (
-  <select {...extractInputProps(props)}>
-    <option value="">Select a value</option>
-    {props.options.map(o => (
-      <option key={o.value} value={o.value}>
-        {o.label || o.value}
-      </option>
-    ))}
-  </select>
-);
+const SelectInput = (props) => {
+  const { options } = props;
 
-const CheckInput = props => (
-  <>
-    {props.options.map(option => (
-      <label key={option.value}>
-        <input {...extractInputProps(props, option)} />
-        {option.label || option.value}
-      </label>
-    ))}
-  </>
-);
+  return (
+    <select {...extractInputProps(props)}>
+      <option value="">Select a value</option>
+      {options.map((o) => (
+        <option key={o.value} value={o.value}>
+          {o.label || o.value}
+        </option>
+      ))}
+    </select>
+  );
+};
 
-const FormInput = props => {
+const CheckInput = (props) => {
+  const { options } = props;
+  return (
+    <>
+      {options.map((option) => (
+        <label key={option.value}>
+          <input {...extractInputProps(props, option)} />
+          {option.label || option.value}
+        </label>
+      ))}
+    </>
+  );
+};
+
+const FormInput = (props) => {
   switch (props.type) {
     case 'radio':
     case 'checkbox':
@@ -70,94 +79,21 @@ const FormInput = props => {
   }
 };
 
-const FormItem = connect(props => {
-  const { label, ...inputProps } = props;
+const FormItem = connect((props) => {
+  const { label, id, ...inputProps } = props;
   const { errors, touched } = props.formik;
-  return (
-    <div>
-      {label && <label>{label}</label>}
 
-      <FormInput {...inputProps} />
+  return (
+    <Container>
+      {label && <label htmlFor={id}>{label}</label>}
+
+      <FormInput id={id} {...inputProps} />
 
       {errors[inputProps.name] && touched[inputProps.name] && (
         <p>{errors[inputProps.name]}</p>
       )}
-    </div>
+    </Container>
   );
 });
 
 export default FormItem;
-
-// function ExampleForm(props) {
-//   return (
-//     <form onSubmit={props.handleSubmit}>
-//       <FormItem type="text" label="Full Name" name="fullName" />
-//       <FormItem type="textarea" label="Comment" name="comment" />
-//       <FormItem
-//         type="select"
-//         label="Default Currency"
-//         name="defaultCurrency"
-//         options={[
-//           { value: 'USD', label: 'American Dollar' },
-//           { value: 'EUR', label: 'Euro' },
-//         ]}
-//       />
-//       <FormItem
-//         type="radio"
-//         label="Gender"
-//         name="gender"
-//         options={[
-//           { value: 'male', label: 'Male' },
-//           { value: 'female', label: 'Female' },
-//           { value: 'other', label: 'Other' },
-//         ]}
-//       />
-//       <FormItem
-//         type="checkbox"
-//         label="Hobbies"
-//         name="hobbies"
-//         options={[
-//           { value: 'baking', label: 'Baking' },
-//           { value: 'dance', label: 'Dance' },
-//         ]}
-//       />
-//       <button type="submit">Submit</button>
-//     </form>
-//   );
-// }
-
-// export default function App() {
-//   return (
-//     <Formik
-//       component={ExampleForm}
-//       onSubmit={values => alert(JSON.stringify(values, null, 2))}
-//       initialValues={{
-//         fullName: '',
-//         comment: '',
-//         defaultCurrency: '',
-//         gender: '',
-//         hobbies: [],
-//       }}
-//       validate={(values, props) => {
-//         const errors = {};
-
-//         if (!values.fullName) {
-//           errors.fullName = 'Full name is required';
-//         }
-//         if (!values.comment) {
-//           errors.comment = 'Comment is required';
-//         }
-//         if (!values.defaultCurrency) {
-//           errors.defaultCurrency = 'defaultCurrency is required';
-//         }
-//         if (!values.gender) {
-//           errors.gender = 'gender is required';
-//         }
-//         if (!values.hobbies.length) {
-//           errors.hobbies = 'hobbies is required';
-//         }
-//         return errors;
-//       }}
-//     />
-//   );
-// }
