@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { Container } from './styles';
-import InputFormik from '~/components/FormikInput';
+// import InputFormik from '~/components/FormikInput';
 
 export default function Home() {
   return (
